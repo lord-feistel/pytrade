@@ -1,19 +1,18 @@
-                     /  |                             /  |
-  ______   __    __  _$$ |_     ______   ______    ____$$ |  ______
- /      \ /  |  /  |/ $$   |   /      \ /      \  /    $$ | /      \
-/$$$$$$  |$$ |  $$ |$$$$$$/   /$$$$$$  |$$$$$$  |/$$$$$$$ |/$$$$$$  |
-$$ |  $$ |$$ |  $$ |  $$ | __ $$ |  $$/ /    $$ |$$ |  $$ |$$    $$ |
-$$ |__$$ |$$ \__$$ |  $$ |/  |$$ |     /$$$$$$$ |$$ \__$$ |$$$$$$$$/
-$$    $$/ $$    $$ |  $$  $$/ $$ |     $$    $$ |$$    $$ |$$       |
-$$$$$$$/   $$$$$$$ |   $$$$/  $$/       $$$$$$$/  $$$$$$$/  $$$$$$$/
-$$ |      /  \__$$ |
-$$ |      $$    $$/
-$$/        $$$$$$/
-'''
-
-
+   
 
 Tool created to automatize download and graph plot on trading market
+
+Dependencies:
+
+-pandas 
+-mplfinance 
+-sys
+-yfinance 
+-numpy 
+-math
+-datetime
+-glob
+-argparse
 
 USAGE:
 
@@ -47,5 +46,5 @@ python3 pytrade.py  get --start '2020-02-11' --end '2020-02-20'
 TODO LIST
 
 - maybe more functions using talib
-- imprive argparser
+- improve argparser
 
