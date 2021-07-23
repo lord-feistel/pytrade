@@ -13,7 +13,8 @@ $$/        $$$$$$/
 
 
 
-Tool created to automatize download and graph plot on trading market
+Function made to be called from C++ in order to replace gnuplot
+what showed a problem in graphs with windows
 
 USAGE:
 
