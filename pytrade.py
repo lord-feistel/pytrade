@@ -299,7 +299,7 @@ def main():
     #get parameters from comand line
     params = argparse.ArgumentParser(description=
     '''
-    pytrade - Trade interface to C++\n
+    pytrade - Trade helper tool
 
     ''',
 
