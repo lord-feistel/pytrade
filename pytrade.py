@@ -2,6 +2,30 @@
 # with scalability and with. Possible in the future it will be embedded
 # in the C++ code using boost
 
+'''
+
+Copyright (c) 2022 
+  
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+  
+  
+Author : Antonio ( Lord Feistel )
+
+repo : https://github.com/lord-feistel/pytrade
+
+'''
+
 import pandas as pd
 import mplfinance as mpf
 import sys
@@ -65,7 +89,7 @@ def PlotGraph(glabel, begin , final, file, extra_aline,extra_vline,extra_hline,a
     df.head()
 
     #take the signals to the graph
-    buy, sell = AddSignals(df, "/home/neo/pytrade/buy.dat", "/home/neo/pytrade/sell.dat")
+    buy, sell = AddSignals(df, "buy.dat", "sell.dat")
 
     #add markers which will be used after on the graph
 
@@ -159,7 +183,7 @@ OUTPUT: save to data.dat
 '''
 def GetData(start, end):
 
-    companies = ReadFile("/home/neo/pytrade/companies.txt")
+    companies = ReadFile("companies.txt")
 
     syear, smonth, sday = DateToIntList( start )
     eyear, emonth, eday = DateToIntList( end )
@@ -188,7 +212,7 @@ def GetData(start, end):
                 data = yf.download(c ,start, end, group_by="ticker")
                 #data.reset_index(inplace=True)
                 data.reset_index()
-                fname = "/home/neo/pytrade/data/" + c
+                fname = "./data/" + c
                 data.to_csv(fname)
 
     return
@@ -216,11 +240,11 @@ def AddSignals(data, FileBuy, FileSell):
     flgS = False
     #list of buy entries
     buy=[]
-    BuySet = ReadFile("/home/neo/pytrade/buy.dat")
+    BuySet = ReadFile("buy.dat")
 
     #list of buy entries
     sell=[]
-    SellSet = ReadFile("/home/neo/pytrade/sell.dat")
+    SellSet = ReadFile("sell.dat")
 
     #it will check if it's on the buy file
     # or in the sell file
